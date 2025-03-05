@@ -1,29 +1,22 @@
-import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import './App.css'
+import UserLogin from "./Components/Login";
+// import KnowledgeLevel from "./Components/KnowledgeLevel";
+// import Quiz from "./Components/Quiz";
+// import Results from "./Components/Results";
+import "./App.css";
 
 function App() {
-  
-
   return (
-   <Router>
+    <Router>
       <Routes>
-        <Route path="/" element={<LogIn/>}/>
-        <Route path="./components/KnowledgeLevel" element={<KnowledgeLevel/>}/>
-        <Route path="./components/Quiz" element={<Quiz/>}/>
-        <Route path="./components/Results" element={<Results/>}/>
+        <Route path="/" element={<UserLogin />} />
+        {/* <Route path="/knowledge-level" element={<KnowledgeLevel />} /> */}
+        {/* <Route path="/quiz" element={<Quiz />} /> */}
+        {/* <Route path="/results" element={<Results />} /> */}
+        
       </Routes>
-
-
-
-
-
-
-
-   </Router>
-  )
+    </Router>
+  );
 }
 
-export default App
-
+export default App;

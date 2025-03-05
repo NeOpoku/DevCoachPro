@@ -1,4 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from "react";
+import "../styles/Login.css";
+
 
 interface LoginInfo {
   username: string;

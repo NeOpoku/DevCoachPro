@@ -4,25 +4,25 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
 
 function App() {
-  
+  <button>this is a button</button>
 
   return (
-   <Router>
-      <Routes>
-        <Route path="/" element={<LogIn/>}/>
-        <Route path="./components/KnowledgeLevel" element={<KnowledgeLevel/>}/>
-        <Route path="./components/Quiz" element={<Quiz/>}/>
-        <Route path="./components/Results" element={<Results/>}/>
-      </Routes>
+    <div>
 
+      <button>this is a button</button>
 
+      <Router>
+        <Routes>
+          <Route path="/" element={<LogIn/>}/>
+          {/* <Route path="./components/KnowledgeLevel" element={<KnowledgeLevel/>}/>
+          <Route path="./components/Quiz" element={<Quiz/>}/>
+          <Route path="./components/Results" element={<Results/>}/> */}
+        </Routes>
+      </Router>
+    </div>
+  );
+  <button>this is a button</button>
 
-
-
-
-
-   </Router>
-  )
 }
 
 export default App

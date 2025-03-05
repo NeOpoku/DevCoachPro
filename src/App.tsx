@@ -30,7 +30,7 @@ const App: React.FC = () => {
         </div>
         <div className="hero-right">
           {/* Add AI Image Here */}
-          <img src="/src/styles/DevCoachPro.png" alt="AI Coding" width="400px"/>
+          <img src="/src/styles/DevCoachPro.png" alt="Logo" width="400px"/>
 
         </div>
       </section>

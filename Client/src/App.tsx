@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import UserLogin from "./Components/Login";
+// import SignupModal from "./Components/Signup";
 // import KnowledgeLevel from "./Components/KnowledgeLevel";
 // import Quiz from "./Components/Quiz";
 // import Results from "./Components/Results";
-import "./App.css";
+// import "./App.css";
 
 function App() {
 

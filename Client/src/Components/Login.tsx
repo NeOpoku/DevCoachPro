@@ -1,6 +1,8 @@
 import { useState, ChangeEvent, FormEvent } from "react";
+
 import "../styles/Login.css";
 
+import SignupModal from "./Signup" // Import SignupModal
 
 interface LoginInfo {
   username: string;
@@ -13,6 +15,8 @@ const UserLogin: React.FC = () => {
     password: "",
   });
 
+  const [isSignupOpen, setIsSignupOpen] = useState(false); // Track modal state
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setLoginInfo({
       ...loginInfo,
@@ -22,7 +26,7 @@ const UserLogin: React.FC = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log("Form Data:", loginInfo);
+    console.log("Logging in with:", loginInfo);
   };
 
   return (
@@ -49,6 +53,12 @@ const UserLogin: React.FC = () => {
           Submit
         </button>
       </form>
+
+      <p>Don't have an account?</p>
+      <button onClick={() => setIsSignupOpen(true)}>Sign Up</button>
+
+      {/* Render SignupModal when isSignupOpen is true */}
+      <SignupModal isOpen={isSignupOpen} onClose={() => setIsSignupOpen(false)} />
     </div>
   );
 };

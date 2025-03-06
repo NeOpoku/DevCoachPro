@@ -1,4 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
+
+import "../styles/Login.css";
+
 import SignupModal from "./Signup" // Import SignupModal
 
 interface LoginInfo {

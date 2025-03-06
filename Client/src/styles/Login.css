@@ -1,0 +1,103 @@
+/* 🎨 Global Styles for Login Page */
+:root {
+  --primary-color: #a855f7; /* Main Purple */
+  --secondary-color: #ffffff; /* White */
+  --background-color: #0a0214; /* Dark Background */
+  --button-hover: #9333ea; /* Brighter Purple for Hover */
+  --input-bg: #1a0b30; /* Dark Purple Input Fields */
+  --text-color: #f3e8ff; /* Light Purple/White Text */
+  --box-shadow-glow: 0px 0px 15px rgba(255, 0, 255, 0.4);
+}
+
+/* 🌍 Full-Page Background */
+body {
+  background: linear-gradient(120deg, var(--background-color), #14002d);
+  color: var(--text-color);
+  font-family: "Fira Code", monospace;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* 📦 Login Container */
+.container {
+  width: 350px;
+  padding: 30px;
+  background: rgba(26, 11, 48, 0.9);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-glow);
+  text-align: center;
+  position: relative;
+
+}
+
+/* 🏷 Title */
+h1 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+/* 🔡 Input Fields */
+.username-input,
+.password-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: var(--input-bg);
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--text-color);
+  outline: none;
+  transition: 0.3s;
+  position: relative;
+  right: 15px;
+}
+
+/* 🟣 Input Focus Effect */
+.username-input:focus,
+.password-input:focus {
+  border-color: var(--button-hover);
+  box-shadow: 0px 0px 10px rgba(160, 0, 255, 0.5);
+}
+
+/* 🔘 Login Button */
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 💡 Button Hover Effect */
+button:hover {
+  background-color: var(--button-hover);
+  box-shadow: var(--box-shadow-glow);
+  transform: translateY(-2px);
+}
+
+/* 🔗 Forgot Password & Signup Links */
+.login-links {
+  margin-top: 15px;
+}
+
+.login-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.login-links a:hover {
+  color: var(--button-hover);
+  text-shadow: 0px 0px 10px rgba(255, 0, 255, 0.4);
+}

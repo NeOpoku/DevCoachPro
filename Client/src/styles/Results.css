@@ -1,0 +1,44 @@
+/* 📊 Results Page */
+.results-container {
+    text-align: center;
+    background: rgba(26, 11, 48, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow-glow);
+    width: 500px;
+    margin: auto;
+}
+
+/* 🏆 Score Display */
+.results-score {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* 📊 Detailed Feedback */
+.results-feedback {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-top: 15px;
+}
+
+/* 🔘 Restart Button */
+.restart-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.restart-btn:hover {
+    background: var(--button-hover);
+    box-shadow: var(--box-shadow-glow);
+    transform: translateY(-2px);
+}

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+    /* 🎨 Global Variables */
+:root {
+    --primary-color: #a855f7; /* Main Purple */
+    --secondary-color: #ffffff; /* White */
+    --background-color: #0a0214; /* Dark Background */
+    --button-hover: #9333ea; /* Brighter Purple */
+    --input-bg: #1a0b30; /* Dark Purple Input Fields */
+    --text-color: #f3e8ff; /* Light Purple Text */
+    --gradient-bg: linear-gradient(120deg, #0a0214, #14002d);
+    --box-shadow-glow: 0px 0px 15px rgba(255, 0, 255, 0.4);
+    --font-primary: "Fira Code", monospace;
+}
+
+/* 🌍 Apply Global Styles */
+body {
+    background: var(--gradient-bg);
+    color: var(--text-color);
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 🎨 Global Styles */

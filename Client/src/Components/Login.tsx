@@ -1,8 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 
 import "../styles/Login.css";
-
-import SignupModal from "./Signup" // Import SignupModal
+import { Link } from "react-router-dom";
 
 interface LoginInfo {
   username: string;
@@ -15,7 +14,6 @@ const UserLogin: React.FC = () => {
     password: "",
   });
 
-  const [isSignupOpen, setIsSignupOpen] = useState(false); // Track modal state
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setLoginInfo({
@@ -54,11 +52,8 @@ const UserLogin: React.FC = () => {
         </button>
       </form>
 
-      <p>Don't have an account?</p>
-      <button onClick={() => setIsSignupOpen(true)}>Sign Up</button>
+      <p>Don't have an account?<Link to="/Signup"> Create Account!</Link></p>
 
-      {/* Render SignupModal when isSignupOpen is true */}
-      <SignupModal isOpen={isSignupOpen} onClose={() => setIsSignupOpen(false)} />
     </div>
   );
 };

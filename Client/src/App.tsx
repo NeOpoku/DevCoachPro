@@ -19,7 +19,6 @@ function App() {
         <Route path="/knowledge-level" element={<KnowledgeLevel />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/results" element={<Results />} />
-        
       </Routes>
     </Router>
   );

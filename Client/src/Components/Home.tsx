@@ -13,7 +13,7 @@ const Home: React.FC = () => {
         <UserLogin />
       </div>
 
-      {/* Signup Modal Control */}
+      
       {isSignupOpen && <SignupModal isOpen={isSignupOpen} onClose={() => setIsSignupOpen(false)} />}
     </div>
   );

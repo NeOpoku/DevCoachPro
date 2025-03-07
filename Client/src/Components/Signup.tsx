@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import "./signup.css";
+import { Link } from "react-router-dom";
+import "../styles/Signup.css";
 
 const Signup: React.FC = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
 
   const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,7 +43,7 @@ const Signup: React.FC = () => {
         <button type="submit" className="signup-btn">Sign Up</button>
       </form>
       <div className="signup-links">
-        <a href="#">Already have an account? Login</a>
+      <p>Already have an account? <Link to="/">Login</Link></p>
       </div>
     </div>
   );

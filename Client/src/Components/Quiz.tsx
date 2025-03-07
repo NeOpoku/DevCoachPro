@@ -1,5 +1,4 @@
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "../styles/Quiz.css";
 
@@ -8,15 +7,6 @@ const QuizPage: React.FC = () => {
   const queryParams = new URLSearchParams(location.search);
   const knowledgeLevel = queryParams.get("level") || "Unknown";
 
-  return (
-    <div className="knowledge-container">
-      <h1>Quiz Page</h1>
-      <p>You selected: <strong>{knowledgeLevel}</strong> Level</p>
-      <p>🎯 Get ready for some coding challenges!</p>
-
-import { useState, useEffect } from "react";
-
-const QuizPage = () => {
   const [questions, setQuestions] = useState<string[]>([]);
   const [answers, setAnswers] = useState<string[]>(Array(8).fill(""));
   const [loading, setLoading] = useState(true);
@@ -97,7 +87,14 @@ const QuizPage = () => {
           </h2>
         ) : (
           <>
-            {/* ✅ Question Box - Now with sample text */}
+            {/* ✅ Knowledge Level */}
+            <h1 className="text-2xl font-bold text-center mb-4">Quiz Page</h1>
+            <p className="text-lg text-center mb-4">
+              You selected: <strong>{knowledgeLevel}</strong> Level
+            </p>
+            <p className="text-center text-gray-700 mb-6">🎯 Get ready for some coding challenges!</p>
+
+            {/* ✅ Question Box */}
             <div className="mb-6 p-6 bg-blue-100 border border-blue-500 rounded-md shadow-md">
               <h2 className="text-lg font-bold text-blue-700 text-center">
                 Question {currentQuestion + 1} / 8

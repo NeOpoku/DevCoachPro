@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "../styles/Quiz.css";
 
 const QuizPage: React.FC = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const knowledgeLevel = queryParams.get("level") || "Unknown";
+  const navigate = useNavigate();
 
   const [questions, setQuestions] = useState<string[]>([]);
   const [answers, setAnswers] = useState<string[]>(Array(8).fill(""));
@@ -44,6 +45,10 @@ const QuizPage: React.FC = () => {
     });
   };
 
+  const handleRedirect = () => {
+    navigate("/results");
+  };
+
   const handleNext = () => {
     if (currentQuestion < 7) {
       setCurrentQuestion((prev) => prev + 1);
@@ -76,6 +81,11 @@ const QuizPage: React.FC = () => {
     setLoading(false);
   };
 
+  const handleSubmitAndRedirect = () => {
+    handleSubmit();
+    handleRedirect();
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-100">
       <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg p-6 border">
@@ -87,14 +97,12 @@ const QuizPage: React.FC = () => {
           </h2>
         ) : (
           <>
-            {/* ✅ Knowledge Level */}
             <h1 className="text-2xl font-bold text-center mb-4">Quiz Page</h1>
             <p className="text-lg text-center mb-4">
               You selected: <strong>{knowledgeLevel}</strong> Level
             </p>
             <p className="text-center text-gray-700 mb-6">🎯 Get ready for some coding challenges!</p>
 
-            {/* ✅ Question Box */}
             <div className="mb-6 p-6 bg-blue-100 border border-blue-500 rounded-md shadow-md">
               <h2 className="text-lg font-bold text-blue-700 text-center">
                 Question {currentQuestion + 1} / 8
@@ -104,7 +112,6 @@ const QuizPage: React.FC = () => {
               </p>
             </div>
 
-            {/* ✅ Answer Box */}
             <div className="mb-6">
               <label htmlFor="answer" className="block text-sm font-medium text-gray-700">
                 Your Answer:
@@ -119,7 +126,6 @@ const QuizPage: React.FC = () => {
               />
             </div>
 
-            {/* ✅ Navigation Buttons */}
             <div className="flex justify-between mt-4">
               <button
                 onClick={handlePrev}
@@ -137,7 +143,7 @@ const QuizPage: React.FC = () => {
                   Next
                 </button>
               ) : (
-                <button onClick={handleSubmit} className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">
+                <button onClick={handleSubmitAndRedirect} className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">
                   Submit
                 </button>
               )}

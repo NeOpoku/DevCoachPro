@@ -32,7 +32,6 @@ const Signup: React.FC = () => {
           required
         />
         <input
-          type="password"
           className="signup-input"
           placeholder="Enter password"
           value={password}

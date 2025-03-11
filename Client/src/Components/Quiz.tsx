@@ -1,3 +1,4 @@
+
 // import { useState, useEffect } from "react";
 
 // const QuizPage = () => {
@@ -179,7 +180,8 @@
 
 import { useState, useEffect } from "react";
 
-const QuizPage = () => {
+
+
   const [questions, setQuestions] = useState<string[]>([]);
   const [answers, setAnswers] = useState<string[]>(Array(8).fill(""));
   const [currentAnswer, setCurrentAnswer] = useState<string>("");
@@ -221,7 +223,9 @@ const QuizPage = () => {
       return updated;
     });
 
+
     setCurrentAnswer(""); // Reset input
+
 
     if (currentIndex < 7) {
       const nextQuestionNumber = currentIndex + 2;
@@ -263,10 +267,12 @@ const QuizPage = () => {
     setLoading(false);
   };
 
+
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex((prev) => prev - 1);
     }
+
   };
 
   return (
@@ -283,7 +289,9 @@ const QuizPage = () => {
           </div>
         ) : (
           <>
+
             {/* Question Box */}
+
             <div className="mb-6 p-6 bg-blue-100 border border-blue-500 rounded-md shadow-md">
               <h2 className="text-lg font-bold text-blue-700 text-center">
                 DevCoachPro
@@ -295,7 +303,9 @@ const QuizPage = () => {
               </p>
             </div>
 
+
             {/* Answer Box */}
+
             <div className="mb-6">
               <label
                 htmlFor="answer"
@@ -314,6 +324,7 @@ const QuizPage = () => {
             </div>
 
             {/* Navigation Buttons */}
+
             <div className="flex justify-between mt-4">
               <button
                 onClick={handlePrev}
@@ -340,6 +351,7 @@ const QuizPage = () => {
                   className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600"
                 >
                   Submit Quiz
+
                 </button>
               )}
             </div>

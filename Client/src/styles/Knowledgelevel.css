@@ -1,0 +1,91 @@
+/* 🎨 Knowledge Level Page Styles */
+:root {
+    --primary-color: #a855f7; /* Main Purple */
+    --secondary-color: #ffffff; /* White */
+    --background-color: #0a0214; /* Dark Background */
+    --button-hover: #9333ea; /* Brighter Purple */
+    --input-bg: #1a0b30; /* Dark Purple Input Fields */
+    --text-color: #f3e8ff; /* Light Purple Text */
+    --box-shadow-glow: 0px 0px 15px rgba(255, 0, 255, 0.4);
+}
+
+/* 🌍 Full-Page Styling */
+body {
+    background: linear-gradient(120deg, var(--background-color), #14002d);
+    color: var(--text-color);
+    font-family: "Fira Code", monospace;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 📦 Knowledge Level Container */
+.knowledge-container {
+    text-align: center;
+    background: rgba(26, 11, 48, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow-glow);
+    width: 400px;
+}
+
+/* 🏷 Title */
+h1 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* 🔘 Knowledge Level Buttons */
+.level-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.level-btn {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.level-btn:hover {
+    background: var(--button-hover);
+    box-shadow: var(--box-shadow-glow);
+    transform: scale(1.05);
+}
+
+/* ✅ Selected Level Effect */
+.level-btn.selected {
+    background: var(--button-hover);
+    box-shadow: 0px 0px 20px rgba(255, 0, 255, 0.7);
+}
+
+/* 🚀 Start Quiz Button */
+.start-quiz-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.start-quiz-btn:hover {
+    background: var(--button-hover);
+    box-shadow: var(--box-shadow-glow);
+    transform: translateY(-2px);
+}

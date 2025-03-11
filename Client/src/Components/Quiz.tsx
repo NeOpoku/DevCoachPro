@@ -106,9 +106,14 @@ const QuizPage = () => {
           <>
             {/* Question Box */}
             <div className="mb-6 p-6 bg-blue-100 border border-blue-500 rounded-md shadow-md">
-              <h2 className="text-lg font-bold text-blue-700 text-center">
-                DevCoachPro
-              </h2>
+              <h2 className="text-lg font-bold text-blue-700 text-center"></h2>
+              <div className="flex justify-center mt-4">
+                <img
+                  src="/src/assets/DevCoachPro.png"
+                  alt="DevCoachPro Logo"
+                  className="w-24 h-24"
+                />
+              </div>
               <p className="text-lg text-gray-800 text-center mt-2">
                 {questions.length > currentIndex
                   ? questions[currentIndex]

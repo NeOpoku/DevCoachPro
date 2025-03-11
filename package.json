@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 
-    "start": "npm run server && npm run client:build",
+    "start": "npm run build && npm run server:start",
     "start:dev": "concurrently \"npm run server:dev\" \"wait-on tcp:3001 && npm run client:dev\"",
 
-    "server": "if [ -d \"server\" ]; then npm start --prefix server; fi",
-    "server:dev": "if [ -d \"server\" ]; then npm run dev --prefix server; fi",
+    "server:start": "node server/dist/index.js",
+    "server:dev": "npm run dev --prefix server",
 
     "install": "if [ -d \"server\" ]; then npm install --prefix server; fi && if [ -d \"client\" ]; then npm install --prefix client; fi",
     "client:build": "if [ -d \"client\" ]; then npm run build --prefix client; fi",

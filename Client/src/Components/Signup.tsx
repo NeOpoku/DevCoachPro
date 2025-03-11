@@ -1,16 +1,36 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/Signup.css";
 
 const Signup: React.FC = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate()
   
-
-  const handleSignup = (e: React.FormEvent) => {
+  const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Signup details:", { username, email, password });
+
+    try {
+      const response = await fetch('/users', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, email, password }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("Signup error:", errorData);
+        return;
+      }
+      
+      const data = await response.json();
+      console.log("Signup success:", data);
+      navigate("/Login")
+    
+    } catch (err) {
+      console.error("Error during signup:", err);
+    }
   };
 
   return (
@@ -41,10 +61,14 @@ const Signup: React.FC = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit" className="signup-btn">Sign Up</button>
+        <button type="submit" className="signup-btn">
+          Sign Up
+        </button>
       </form>
       <div className="signup-links">
-      <p>Already have an account? <Link to="/">Login</Link></p>
+        <p>
+          Already have an account? <Link to="/">Login</Link>
+        </p>
       </div>
     </div>
   );

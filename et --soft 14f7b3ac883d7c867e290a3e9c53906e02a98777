@@ -1,0 +1,178 @@
+[33mcommit 14f7b3ac883d7c867e290a3e9c53906e02a98777[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mAPI_integration[m[33m)[m
+Author: Jimmykotter <jimmykotter@gmail.com>
+Date:   Mon Mar 10 19:10:08 2025 -0500
+
+    added quiz functionality
+
+[33mcommit 80346ea8cee93c0870e016ab531cd4cbfa245f8a[m
+Author: Jimmykotter <jimmykotter@gmail.com>
+Date:   Thu Mar 6 18:46:13 2025 -0600
+
+    moved API key and added to git ignore
+
+[33mcommit b795db3cfabbf8ec0cedd047adc9710ea51f67bc[m[33m ([m[1;32mprogress_bar[m[33m, [m[1;32mmain[m[33m)[m
+Merge: a10c0bc 745ab59
+Author: leviking12 <131818611+leviking12@users.noreply.github.com>
+Date:   Tue Mar 4 21:13:55 2025 -0500
+
+    Merge pull request #16 from NeOpoku/quizpage
+    
+    added the questions and answers sections for the quizpage
+
+[33mcommit a10c0bc87414acd7d20e37d1bb5d331900c0e9f3[m
+Merge: f92d2f9 38fc9d0
+Author: Jimmykotter <jimmykotter@gmail.com>
+Date:   Tue Mar 4 20:13:52 2025 -0600
+
+    Merge pull request #15 from NeOpoku/feature/sign-up
+    
+    adding signup button
+
+[33mcommit 745ab59e8150dc02e8053d644f7eef472ee98e8b[m[33m ([m[1;31morigin/quizpage[m[33m, [m[1;32mquizpage[m[33m)[m
+Author: Jimmykotter <jimmykotter@gmail.com>
+Date:   Tue Mar 4 20:11:15 2025 -0600
+
+    added the quesion and answer sections for the quizpage
+
+[33mcommit 38fc9d0e97c77360b263ca6eff17218c828fbe12[m[33m ([m[1;31morigin/feature/sign-up[m[33m)[m
+Author: leviking12 <leviking.lk@gmail.com>
+Date:   Tue Mar 4 20:59:39 2025 -0500
+
+    adding signup button
+
+[33mcommit f92d2f9c6649905a8c4ea6fefb17e709f6a2af49[m
+Merge: 9768469 546b8a3
+Author: leviking12 <131818611+leviking12@users.noreply.github.com>
+Date:   Tue Mar 4 19:34:49 2025 -0500
+
+    Merge pull request #7 from NeOpoku/add_components
+    
+    added components for knowledgelevel quiz and results
+
+[33mcommit 546b8a3b52e037871fe6f086be8d81ec278e4fd9[m[33m ([m[1;31morigin/add_components[m[33m)[m
+Merge: 4bb2f88 9768469
+Author: leviking12 <131818611+leviking12@users.noreply.github.com>
+Date:   Tue Mar 4 19:34:40 2025 -0500
+
+    Merge branch 'main' into add_components
+
+[33mcommit 4bb2f88cdb7c6b4a4e20a081e9670a5b6983eafe[m[33m ([m[1;32madd_components[m[33m)[m
+Author: Jimmykotter <jimmykotter@gmail.com>
+Date:   Tue Mar 4 18:19:53 2025 -0600
+
+    added components for knowledgelevel quiz and results
+
+[33mcommit 9768469b6bc82661831ba049b5eac723d6639bc9[m
+Merge: 8620c17 c5a0c13
+Author: Jimmykotter <jimmykotter@gmail.com>
+Date:   Tue Mar 4 18:12:56 2025 -0600
+
+    Merge pull request #6 from NeOpoku/feature/routes
+    
+    completed server folder
+
+[33mcommit c5a0c138f3df4b14e0bedfcf2f62073e71e4974f[m[33m ([m[1;31morigin/feature/routes[m[33m)[m
+Author: leviking12 <leviking.lk@gmail.com>
+Date:   Tue Mar 4 19:07:11 2025 -0500
+
+    completed server folder
+
+[33mcommit 8620c17aa97bb686ef265f4d7c745bc33ad3ee5a[m
+Merge: a9b9f69 5d64a5d
+Author: Jimmykotter <jimmykotter@gmail.com>
+Date:   Mon Mar 3 20:50:55 2025 -0600
+
+    Merge pull request #5 from NeOpoku/feature/routes
+    
+    Feature/routes
+
+[33mcommit 5d64a5d389c19b477f1f7009e052142f8310750c[m
+Merge: 96bdfbc a9b9f69
+Author: leviking12 <leviking.lk@gmail.com>
+Date:   Mon Mar 3 21:49:30 2025 -0500
+
+    fixing merge conflict
+
+[33mcommit 96bdfbc376e127baa79c302ce3223fad16297830[m
+Author: leviking12 <leviking.lk@gmail.com>
+Date:   Mon Mar 3 21:21:31 2025 -0500
+
+    added file structure
+
+[33mcommit a9b9f6928b93a127e7241413b7265ad11b9af0ec[m
+Merge: 335e2a8 3c85a75
+Author: Jimmykotter <jimmykotter@gmail.com>
+Date:   Mon Mar 3 20:17:53 2025 -0600
+
+    Merge pull request #4 from NeOpoku/farkaneBrunch - updated login page information
+    
+    updated login page information
+
+[33mcommit e7eaaf09f18f04838069e61b7e4bcfce656a820d[m
+Author: leviking12 <leviking.lk@gmail.com>
+Date:   Mon Mar 3 20:11:48 2025 -0500
+
+    added routes
+
+[33mcommit 3c85a753db7f01c30f5c807240ee6c9f17307321[m
+Author: Fareed Kulumba <farkane161@gmail.com>
+Date:   Mon Mar 3 19:31:25 2025 -0500
+
+    updated login page
+
+[33mcommit 47386b4494c3277b0cefc447d6bcf9fdc5e5d636[m[33m ([m[1;31morigin/farkaneBranch[m[33m)[m
+Author: Fareed Kulumba <farkane161@gmail.com>
+Date:   Mon Mar 3 18:16:52 2025 -0500
+
+    Login initial page
+
+[33mcommit 335e2a810cd7ff476ae6ce9f0665e525e14b1b32[m[33m ([m[1;32mnew_feature[m[33m)[m
+Merge: f66fa4c 72cc0d3
+Author: leviking12 <131818611+leviking12@users.noreply.github.com>
+Date:   Sat Mar 1 17:04:09 2025 -0500
+
+    Merge pull request #3 from NeOpoku/ImaniBranch
+    
+    added openai integration and .env file
+
+[33mcommit 72cc0d3a59700acb1463786eb71684d4f06ba202[m
+Author: NeOpoku <imanimoss17@gmail.com>
+Date:   Fri Feb 28 12:55:39 2025 -0500
+
+    added openai integration and .env file
+
+[33mcommit f66fa4cd040e8e5bd692e132c78dd1823b14fbbe[m
+Merge: 92479b0 ac9222b
+Author: leviking12 <131818611+leviking12@users.noreply.github.com>
+Date:   Thu Feb 27 20:59:45 2025 -0500
+
+    Merge pull request #2 from NeOpoku/vite
+    
+    removed doublicate folder
+
+[33mcommit ac9222b4db2338888fa2869f077b80681b9b4062[m[33m ([m[1;31morigin/vite[m[33m, [m[1;32mvite[m[33m)[m
+Author: Jimmykotter <jimmykotter@gmail.com>
+Date:   Thu Feb 27 19:54:09 2025 -0600
+
+    removed doublicate folder
+
+[33mcommit 92479b04d2662d99b4423b4b90acb723b2a6e0c9[m[33m ([m[1;31morigin/mohsin_Branch[m[33m)[m
+Merge: 41a1eb7 2a9b817
+Author: leviking12 <131818611+leviking12@users.noreply.github.com>
+Date:   Thu Feb 27 20:40:03 2025 -0500
+
+    Merge pull request #1 from NeOpoku/vite
+    
+    created Vite and React starter code
+
+[33mcommit 2a9b8178c9296f1755b1aedff2b81b969689b29e[m
+Author: Jimmykotter <jimmykotter@gmail.com>
+Date:   Thu Feb 27 19:35:10 2025 -0600
+
+    created Vite and React starter code
+
+[33mcommit 41a1eb78cd42a0f5ee9a16133b4e3d1b406133e7[m[33m ([m[1;31morigin/Kelly-Branch[m[33m)[m
+Author: Imani <imanimoss17@gmail.com>
+Date:   Thu Feb 27 19:56:25 2025 -0500
+
+    Initial commit

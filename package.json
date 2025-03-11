@@ -6,18 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 
-    "start": "npm run client:build && npm run server",
+    "start": "npm run server && npm run client:build",
     "start:dev": "concurrently \"npm run server:dev\" \"wait-on tcp:3001 && npm run client:dev\"",
 
-    "server": "npm start --prefix server",
-    "server:dev": "npm run dev --prefix server",
+    "server": "if [ -d \"server\" ]; then npm start --prefix server; fi",
+    "server:dev": "if [ -d \"server\" ]; then npm run dev --prefix server; fi",
 
-    "install": "npm install --prefix server || true && npm install --prefix client || true",
-    "client:build": "npm run build --prefix client",
-    "client:dev": "npm run dev --prefix client",
-    "build": "npm run build --prefix server",
+    "install": "if [ -d \"server\" ]; then npm install --prefix server; fi && if [ -d \"client\" ]; then npm install --prefix client; fi",
+    "client:build": "if [ -d \"client\" ]; then npm run build --prefix client; fi",
+    "client:dev": "if [ -d \"client\" ]; then npm run dev --prefix client; fi",
+    "build": "if [ -d \"server\" ]; then npm run build --prefix server; fi && if [ -d \"client\" ]; then npm run build --prefix client; fi",
 
-    "seed": "npm run seed --prefix server",
+    "seed": "if [ -d \"server\" ]; then npm run seed --prefix server; fi",
 
     "render-build": "npm install && npm run build"
   },

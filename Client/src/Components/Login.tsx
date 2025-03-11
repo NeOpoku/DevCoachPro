@@ -1,8 +1,7 @@
-import { useState, ChangeEvent, FormEvent, useEffect } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import "../styles/Login.css";
 import { Link, useNavigate } from "react-router-dom";
-import auth from "../utils/auth";
-import { login } from "../api/authAPI"
+import { login } from "../api/authAPI";
 
 interface LoginInfo {
   username: string;
@@ -14,22 +13,8 @@ const UserLogin: React.FC = () => {
     username: "",
     password: "",
   });
-
-  const [loginCheck, setLoginCheck] = useState(false);
-
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
-
-  const checkLogin = () => {
-    if (auth.loggedIn()) {
-      setLoginCheck(true); 
-      navigate("./Knowledgelevel") 
-    }
-  };
-
-  useEffect(() => {
-    checkLogin();  // Call checkLogin() function to update loginCheck state
-  }, [loginCheck]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setLoginInfo({
@@ -38,22 +23,36 @@ const UserLogin: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
+    // Check if both fields are filled out
     if (!loginInfo.username.trim() || !loginInfo.password.trim()) {
       setError("Please fill in all fields.");
       return;
     }
-    login(loginInfo)
-    setError(null);
-    console.log("Logging in with:", loginInfo);
+
+    try {
+      // Await the response from the login API call
+      const data = await login(loginInfo);
+      
+      // Store the token in localStorage for later use
+      localStorage.setItem("token", data.token);
+      console.log("Token stored:", data.token);
+
+      // Clear any previous error and navigate to the desired page
+      setError(null);
+      navigate("/knowledge-level");
+    } catch (err) {
+      console.error("Error during login:", err);
+      setError("Could not fetch user info");
+    }
   };
 
   return (
     <div className="container">
       <h1>Login</h1>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <input
           className="username-input"
@@ -75,8 +74,10 @@ const UserLogin: React.FC = () => {
           Submit
         </button>
       </form>
-
-      <p>Don't have an account?<Link to="/signup"> Create Account!</Link></p>
+      <p>
+        Don't have an account?
+        <Link to="/signup"> Create Account!</Link>
+      </p>
     </div>
   );
 };

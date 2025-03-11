@@ -1,4 +1,3 @@
-![Logo](https://photos.google.com/photo/AF1QipNlHmk5L72XbUnxL5K0b6jnjeSXHuGiALYS3v1l)
 # DevCoachPro 
 - AI-Powered Interview Coach 🎤🤖
 

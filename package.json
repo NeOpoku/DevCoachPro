@@ -6,18 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 
-    "start": "if [ -d \"server\" ]; then npm run build && npm run server:start; else echo '⚠️ WARNING: server/ directory is missing'; exit 1; fi",
+    "start": "npm run build && npm run server:start",
     "start:dev": "concurrently \"npm run server:dev\" \"wait-on tcp:3001 && npm run client:dev\"",
 
     "server:start": "node server/dist/index.js",
     "server:dev": "npm run dev --prefix server",
 
-    "install": "if [ -d \"server\" ]; then npm install --prefix server; else echo '⚠️ WARNING: server/ directory is missing'; exit 1; fi && if [ -d \"client\" ]; then npm install --prefix client; fi",
-    "client:build": "if [ -d \"client\" ]; then npm run build --prefix client; fi",
-    "client:dev": "if [ -d \"client\" ]; then npm run dev --prefix client; fi",
-    "build": "if [ -d \"server\" ]; then npm run build --prefix server; else echo '⚠️ WARNING: server/ directory is missing'; exit 1; fi && if [ -d \"client\" ]; then npm run build --prefix client; fi",
+    "install": "npm install --prefix server && npm install --prefix client",
+    "build": "npm run build --prefix server && npm run build --prefix client",
 
-    "seed": "if [ -d \"server\" ]; then npm run seed --prefix server; fi",
+    "client:build": "npm run build --prefix client",
+    "client:dev": "npm run dev --prefix client",
+
+    "seed": "npm run seed --prefix server",
 
     "render-build": "npm install && npm run build"
   },

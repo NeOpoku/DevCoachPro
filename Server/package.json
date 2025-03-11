@@ -6,13 +6,17 @@
   "type": "module",
   "scripts": {
     "build": "npx tsc",
-    "start": "npm run build && node dist/server.js --ignore client",
+    "start": "npm run build && node dist/server.ts --ignore client",
     "dev": "npx nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "node dist/seeds/index.js"
+    "seed": "node dist/seeds/index.js",
+    "db:create": "npx sequelize-cli db:create",
+    "db:migrate": "npx sequelize-cli db:migrate"
   },
   "nodemonConfig": {
-    "watch": ["src"],
+    "watch": [
+      "src"
+    ],
     "ext": "ts,json,js",
     "exec": "npx tsc && node dist/server.js"
   },
@@ -21,6 +25,7 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
@@ -29,6 +34,7 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/jsonwebtoken": "^9.0.6",
     "typescript": "^5.4.5"

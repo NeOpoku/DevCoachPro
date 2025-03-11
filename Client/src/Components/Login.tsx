@@ -1,8 +1,8 @@
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import "../styles/Login.css";
 import { Link, useNavigate } from "react-router-dom";
-
-const loggedIn: boolean = true;
+import auth from "../utils/auth";
+import { login } from "../api/authAPI"
 
 interface LoginInfo {
   username: string;
@@ -15,16 +15,21 @@ const UserLogin: React.FC = () => {
     password: "",
   });
 
+  const [loginCheck, setLoginCheck] = useState(false);
+
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
-  const handleRedirect = (): void => {
-    if (loggedIn) {
-      navigate("/Knowledge-Level");
-    } else {
-      setError("Please log in!");
+  const checkLogin = () => {
+    if (auth.loggedIn()) {
+      setLoginCheck(true); 
+      navigate("./Knowledgelevel") 
     }
   };
+
+  useEffect(() => {
+    checkLogin();  // Call checkLogin() function to update loginCheck state
+  }, [loginCheck]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setLoginInfo({
@@ -40,10 +45,9 @@ const UserLogin: React.FC = () => {
       setError("Please fill in all fields.");
       return;
     }
-
+    login(loginInfo)
     setError(null);
     console.log("Logging in with:", loginInfo);
-    handleRedirect();
   };
 
   return (
@@ -72,7 +76,7 @@ const UserLogin: React.FC = () => {
         </button>
       </form>
 
-      <p>Don't have an account?<Link to="/Signup"> Create Account!</Link></p>
+      <p>Don't have an account?<Link to="/signup"> Create Account!</Link></p>
     </div>
   );
 };

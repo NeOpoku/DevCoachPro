@@ -141,7 +141,7 @@ const QuizPage = () => {
 
             {/* Navigation Buttons */}
             <div className="flex justify-between mt-4">
-              <button
+              {/* <button
                 onClick={handlePrev}
                 disabled={currentIndex === 0}
                 className={`px-4 py-2 rounded-md ${
@@ -151,7 +151,7 @@ const QuizPage = () => {
                 }`}
               >
                 Previous
-              </button>
+              </button> */}
               {currentIndex < 7 ? (
                 <button
                   onClick={handleSubmitAnswer}

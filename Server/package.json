@@ -2,14 +2,17 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "server.ts",
   "type": "module",
   "scripts": {
     "build": "npx tsc",
     "start": "npm run build && node dist/index.js",
     "dev": "npx nodemon src/index.ts",
+
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "node dist/seeds/index.js"
+    "seed": "node dist/seeds/index.js",
+    "db:create": "npx sequelize-cli db:create",
+    "db:migrate": "npx sequelize-cli db:migrate"
   },
   "nodemonConfig": {
     "watch": [

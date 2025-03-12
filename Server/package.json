@@ -6,13 +6,9 @@
   "type": "module",
   "scripts": {
     "build": "npx tsc",
-<<<<<<< HEAD
     "start": "npm run build && node dist/index.js",
     "dev": "npx nodemon src/index.ts",
-=======
-    "start": "npm run build && node dist/server.ts --ignore client",
-    "dev": "npx nodemon",
->>>>>>> d3fad8cc0a72712f587c2c82532b6ea15ab7c307
+
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node dist/seeds/index.js",
     "db:create": "npx sequelize-cli db:create",
